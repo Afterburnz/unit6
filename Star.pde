@@ -1,5 +1,6 @@
 class Star {
   float x, y, vx, vy, size;
+  int h, s, b;
 
   Star() {
     x=random(0, width);
@@ -7,20 +8,18 @@ class Star {
     vx=0;
     vy=random(1, 5);
     size=vy;
-    
+    h = int(random(0, 255));
+    s = 255;
+    b=255;
   }
-  void show(){
-    fill(255);
-    square(x,y,size);
-  
-  
+  void show() {
+    fill(h,s,b);
+    square(x, y, size);
   }
-  void act(){
+  void act() {
     y=y+vy;
-    if(y>height+size){
+    if (y>height+size) {
       y=-size;
     }
-  
   }
-  
 }
